@@ -9,7 +9,7 @@ This repository is aimed at providing an easy way to set up a Dockerized Ubuntu 
 
 ```
 ➜  ~ cd ~/projects/tunnelmole-client # Entering the tunnelmole-client folder on my host. Tunnelmole (https://tunnelmole.com) is an open source tunneling tool
-➜  tunnelmole-client git:(main) ✗ ~/scripts/start-ubuntu-with-tools.sh
+➜  tunnelmole-client git:(main) ✗ start-ubuntu-with-tools.sh
 ubuntu@e95dee9218ea:~/projects/tunnelmole-client$ # Automatically dropped into the same folder I was working in 
 ubuntu@e95dee9218ea:~/projects/tunnelmole-client$ npm run build-linux-bin # Now, I can build linux binaries with Vercel pkg, which wont run under nix-ld due to how it handles environment variables
 ```
@@ -39,6 +39,12 @@ Ensure you have Docker installed on your system. You can follow the installation
    ./build.sh
    ```
    This will execute the Docker build using the instructions in the `Dockerfile`.
+
+### Symlink start.sh somewhere handy in your PATH. 
+For example
+```
+sudo ln -s start.sh /usr/bin/start-ubuntu-with-tools.sh
+```
 
 ### Using the Container
 
