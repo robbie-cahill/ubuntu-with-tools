@@ -9,7 +9,7 @@ This repository is aimed at providing an easy way to set up a Dockerized Ubuntu 
 
 ```
 ➜  ~ cd ~/projects/tunnelmole-client # Entering the tunnelmole-client folder on my host. Tunnelmole (https://tunnelmole.com) is an open source tunneling tool
-➜  tunnelmole-client git:(main) ✗ start-ubuntu-with-tools.sh
+➜  tunnelmole-client git:(main) ✗ ubuntu-with-tools.sh
 ubuntu@e95dee9218ea:~/projects/tunnelmole-client$ # Automatically dropped into the same folder I was working in 
 ubuntu@e95dee9218ea:~/projects/tunnelmole-client$ npm run build-linux-bin # Now, I can build linux binaries with Vercel pkg, which wont run under nix-ld due to how it handles environment variables
 ```
@@ -18,7 +18,7 @@ ubuntu@e95dee9218ea:~/projects/tunnelmole-client$ npm run build-linux-bin # Now,
 - `build.sh`: A script to build the Docker image.
 - `Dockerfile`: The Dockerfile containing the instructions to build the Docker image with Ubuntu and the desired tools.
 - `README.md`: This file, containing instructions and information about the project.
-- `start-ubuntu-with-tools.sh`: A script to start the Docker container with the tools and interactive shell.
+- `ubuntu-with-tools.sh`: A script to start the Docker container with the tools and interactive shell.
 
 ## Getting Started
 
@@ -43,16 +43,16 @@ Ensure you have Docker installed on your system. You can follow the installation
 ### Symlink start.sh somewhere handy in your PATH. 
 For example
 ```
-sudo ln -s start.sh /usr/bin/start-ubuntu-with-tools.sh
+sudo ln -s start.sh /usr/bin/ubuntu-with-tools.sh
 ```
 
 ### Using the Container
 
-To easily start a shell session within the Dockerized environment, you'll need to symlink the `start-ubuntu-with-tools.sh` script to a directory that's in your PATH.
+To easily start a shell session within the Dockerized environment, you'll need to symlink the `ubuntu-with-tools.sh` script to a directory that's in your PATH.
 
-1. Create a symlink to `start-ubuntu-with-tools.sh`:
+1. Create a symlink to `ubuntu-with-tools.sh`:
    ```sh
-   ln -s $(pwd)/start-ubuntu-with-tools.sh /usr/local/bin/start-ubuntu-with-tools
+   ln -s $(pwd)/ubuntu-with-tools.sh /usr/local/bin/start-ubuntu-with-tools
    ```
 
 2. From anywhere in your home directory, run:
